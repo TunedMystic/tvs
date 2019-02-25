@@ -9,10 +9,8 @@ matrix:
       install:
         - pip install pipenv --upgrade
         - pipenv install --dev
-        # - pip install -r requirements-dev.txt
       script:
         - pipenv run pytest --cov-report term --cov=./ tests
-        # - pytest --cov-report term --cov=./ tests
       after_success:
         - pipenv run codecov
 
