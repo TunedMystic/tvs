@@ -7,11 +7,11 @@ matrix:
         - cd backend/
       install:
         - pip install pipenv
-        - pipenv install
+        - pipenv install --dev
       script:
         # - pipenv run pytest tests
-        # - pipenv run pytest --cov-report term --cov=./ tests
-        - pipenv run pytest --cov=./ tests
+        - pipenv run pytest --cov-report term --cov=./ tests
+        # - pipenv run pytest --cov=./ tests
       after_success:
         - pipenv run codecov
 
