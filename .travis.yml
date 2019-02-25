@@ -10,7 +10,8 @@ matrix:
         - pipenv install
       script:
         # - pipenv run pytest tests
-        - pipenv run pytest --cov-report term --cov=./ tests
+        # - pipenv run pytest --cov-report term --cov=./ tests
+        - pipenv run pytest --cov=./ tests
       after_success:
         - pipenv run codecov
 
