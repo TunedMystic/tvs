@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cd backend && pipenv run pytest tests
+pytest --cov-report term --cov=./backend backend/tests
