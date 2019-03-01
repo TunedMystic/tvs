@@ -4,22 +4,17 @@ matrix:
       python:
         - "3.7-dev"
       cache: pip
-      before_install:
-        - cd backend/
       install:
-        - pip install pipenv --upgrade
-        - pipenv install --dev
+        - pip install -r requirements-dev.txt
       script:
-        - pipenv run pytest --cov-report term --cov=./ tests
+        - pytest --cov-report term --cov=./backend backend/tests
       after_success:
-        - pipenv run codecov
+        - codecov
 
     - language: node_js
       node_js:
         - "11.10.0"
       cache: npm
-      before_install:
-        - cd frontend/
       install:
         - npm install
       script:
